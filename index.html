@@ -4,87 +4,161 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>I&S Beauty | Perfumes, Beleza & Acessórios</title>
-<meta name="description" content="I&S Beauty — Perfumes, produtos de beleza e acessórios. Elegância que combina contigo.">
+<meta name="description" content="I&S Beauty — perfumes, produtos de beleza e acessórios. Encomende facilmente pelo WhatsApp.">
 <style>
+:root{
+  --gold:#d9ad55;--gold2:#f0d08a;--dark:#090909;--card:#151515;
+  --muted:#bdbdbd;--line:#3d2d16;--white:#fff;
+}
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial,Helvetica,sans-serif;background:#090909;color:#fff;line-height:1.6}
-header{position:sticky;top:0;z-index:10;background:rgba(9,9,9,.96);border-bottom:1px solid #b98a35}
-nav{max-width:1100px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:14px 20px}
-.logo{font-family:Georgia,serif;color:#e6b85c;font-size:25px;font-weight:bold;letter-spacing:2px}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--dark);color:var(--white);line-height:1.6}
+header{position:sticky;top:0;z-index:50;background:rgba(9,9,9,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav{max-width:1180px;margin:auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font-family:Georgia,serif;color:var(--gold2);font-size:24px;font-weight:bold;letter-spacing:2px}
 nav a{color:#eee;text-decoration:none;margin-left:18px;font-size:14px}
-nav a:hover{color:#e6b85c}
-.hero{min-height:78vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:70px 20px;background:radial-gradient(circle at center,#2b2110 0,#090909 52%)}
-.hero h1{font-family:Georgia,serif;font-size:clamp(48px,10vw,90px);color:#e6b85c;letter-spacing:5px}
-.hero h2{font-size:25px;margin:8px 0;color:#fff;letter-spacing:3px}
-.hero p{max-width:600px;margin:18px auto;color:#d4d4d4}
-.btn{display:inline-block;margin-top:18px;background:#d9aa50;color:#090909;text-decoration:none;font-weight:bold;padding:13px 25px;border-radius:30px}
-section{max-width:1100px;margin:auto;padding:70px 20px}
-.title{text-align:center;font-family:Georgia,serif;color:#e6b85c;font-size:34px;margin-bottom:35px}
-.about{text-align:center;max-width:760px;margin:auto;color:#ccc}
-.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:20px}
-.card{background:#141414;border:1px solid #5d431d;border-radius:16px;padding:28px 20px;text-align:center;transition:.2s}
-.card:hover{transform:translateY(-4px);border-color:#e6b85c}
-.icon{font-size:45px;margin-bottom:10px}
-.card h3{color:#e6b85c;margin-bottom:8px}
-.card p{color:#bbb;font-size:14px}
-.contact{text-align:center;background:#111;border-radius:20px;border:1px solid #5d431d}
+nav a:hover{color:var(--gold2)}
+.hero{min-height:78vh;display:flex;align-items:center;text-align:center;justify-content:center;padding:80px 20px;background:radial-gradient(circle at 50% 35%,#352510 0,#120e08 35%,#090909 70%)}
+.hero-inner{max-width:800px}
+.eyebrow{color:var(--gold2);font-size:13px;letter-spacing:4px;font-weight:bold}
+.hero h1{font-family:Georgia,serif;font-size:clamp(55px,12vw,105px);color:var(--gold2);letter-spacing:7px;line-height:1}
+.hero h2{font-size:24px;letter-spacing:6px;margin:12px 0}
+.hero p{max-width:650px;margin:18px auto;color:#d1d1d1;font-size:16px}
+.btn{display:inline-block;margin-top:16px;background:linear-gradient(135deg,var(--gold2),var(--gold));color:#111;text-decoration:none;font-weight:bold;padding:13px 24px;border-radius:30px;box-shadow:0 8px 25px rgba(217,173,85,.18)}
+.btn:hover{transform:translateY(-1px)}
+section{max-width:1180px;margin:auto;padding:75px 20px}
+.title{text-align:center;font-family:Georgia,serif;color:var(--gold2);font-size:36px;margin-bottom:12px}
+.subtitle{text-align:center;color:var(--muted);max-width:720px;margin:0 auto 35px}
+.about{text-align:center;max-width:780px;margin:auto;color:#ccc}
+.gold{color:var(--gold2)}
+.categories{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:28px 0 35px}
+.filter{border:1px solid var(--line);background:#101010;color:#ddd;border-radius:25px;padding:9px 16px;cursor:pointer}
+.filter.active,.filter:hover{border-color:var(--gold);color:var(--gold2)}
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:22px}
+.product{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;transition:.2s}
+.product:hover{transform:translateY(-4px);border-color:#8d672c}
+.product-img{width:100%;aspect-ratio:1/1;object-fit:cover;background:#eee;display:block}
+.product-body{padding:20px;display:flex;flex-direction:column;flex:1}
+.badge{display:inline-block;width:max-content;font-size:11px;color:#17120a;background:var(--gold2);padding:4px 9px;border-radius:20px;font-weight:bold;margin-bottom:10px}
+.product h3{font-size:20px;color:#fff;margin-bottom:7px}
+.product p{font-size:14px;color:#aaa;margin-bottom:14px}
+.price{font-size:20px;font-weight:bold;color:var(--gold2);margin-top:auto}
+.buy{display:block;text-align:center;margin-top:15px;padding:11px 14px;border-radius:25px;background:#25D366;color:#07150b;text-decoration:none;font-weight:bold}
+.buy:hover{filter:brightness(1.08)}
+.note{font-size:12px;color:#777;text-align:center;margin-top:18px}
+.contact{text-align:center;background:linear-gradient(145deg,#17120b,#101010);border:1px solid var(--line);border-radius:22px;padding:45px 22px}
 .contact p{color:#ccc}
-footer{text-align:center;padding:30px 20px;border-top:1px solid #3b2a12;color:#999;font-size:13px}
-.gold{color:#e6b85c}
-@media(max-width:650px){nav{flex-direction:column;gap:10px}nav a{margin:0 7px}.hero{min-height:70vh}.hero h2{font-size:19px}}
+footer{text-align:center;padding:30px 20px;border-top:1px solid #2b210f;color:#888;font-size:13px}
+.floating{position:fixed;right:18px;bottom:18px;z-index:60;background:#25D366;color:#07150b;text-decoration:none;font-weight:bold;padding:13px 17px;border-radius:30px;box-shadow:0 8px 25px rgba(0,0,0,.4)}
+@media(max-width:700px){
+  nav{flex-direction:column;gap:8px}nav a{margin:0 7px;font-size:13px}
+  .hero{min-height:68vh;padding:65px 18px}.hero h2{font-size:19px}
+  section{padding:58px 15px}.title{font-size:30px}
+  .floating{right:12px;bottom:12px}
+}
 </style>
 </head>
 <body>
+
 <header>
 <nav>
-<div class="logo">I&S BEAUTY</div>
-<div>
-<a href="#inicio">Início</a>
-<a href="#sobre">Sobre</a>
-<a href="#produtos">Produtos</a>
-<a href="#contactos">Contactos</a>
-</div>
+  <div class="logo">I&S BEAUTY</div>
+  <div>
+    <a href="#inicio">Início</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#catalogo">Catálogo</a>
+    <a href="#contactos">Contactos</a>
+  </div>
 </nav>
 </header>
 
 <main>
 <section class="hero" id="inicio">
-<div>
-<div class="gold" style="font-size:14px;letter-spacing:4px">PERFUMES • BELEZA • ACESSÓRIOS</div>
-<h1>I&S</h1>
-<h2>BEAUTY</h2>
-<p>Elegância que combina contigo. Descubra perfumes e acessórios escolhidos para realçar o seu estilo.</p>
-<a class="btn" href="#produtos">Ver produtos</a>
-</div>
+  <div class="hero-inner">
+    <div class="eyebrow">PERFUMES • BELEZA • ACESSÓRIOS</div>
+    <h1>I&amp;S</h1>
+    <h2>BEAUTY</h2>
+    <p>Elegância que combina contigo. Descubra produtos selecionados para realçar o seu estilo e faça a sua encomenda diretamente pelo WhatsApp.</p>
+    <a class="btn" href="#catalogo">Ver catálogo</a>
+  </div>
 </section>
 
 <section id="sobre">
-<h2 class="title">Sobre a I&S Beauty</h2>
-<p class="about">A <strong class="gold">I&S Beauty</strong> é uma marca dedicada à venda de perfumes, produtos de beleza e acessórios. O nosso objetivo é oferecer qualidade, elegância e uma experiência de compra simples e confiável.</p>
+  <h2 class="title">Sobre a I&amp;S Beauty</h2>
+  <p class="about">A <strong class="gold">I&amp;S Beauty</strong> é dedicada à venda de perfumes, produtos de beleza e acessórios, com uma experiência de compra simples e prática. Escolha o seu produto e fale connosco pelo WhatsApp.</p>
 </section>
 
-<section id="produtos">
-<h2 class="title">O que vendemos</h2>
-<div class="products">
-<div class="card"><div class="icon">🌸</div><h3>Perfumes</h3><p>Fragrâncias para diferentes estilos e ocasiões.</p></div>
-<div class="card"><div class="icon">💄</div><h3>Beleza</h3><p>Produtos para complementar o seu cuidado e estilo.</p></div>
-<div class="card"><div class="icon">💎</div><h3>Acessórios</h3><p>Detalhes que dão personalidade ao seu visual.</p></div>
-<div class="card"><div class="icon">🎁</div><h3>Presentes</h3><p>Opções para surpreender alguém especial.</p></div>
-</div>
+<section id="catalogo">
+  <h2 class="title">Catálogo</h2>
+  <p class="subtitle">Escolha uma categoria e clique em <strong class="gold">Comprar</strong> para enviar o pedido pelo WhatsApp.</p>
+
+  <div class="categories">
+    <button class="filter active" onclick="filterProducts('todos',this)">Todos</button>
+    <button class="filter" onclick="filterProducts('acessorios',this)">Acessórios</button>
+    <button class="filter" onclick="filterProducts('beleza',this)">Beleza</button>
+    <button class="filter" onclick="filterProducts('perfumes',this)">Perfumes</button>
+  </div>
+
+  <div class="products">
+    <article class="product" data-category="acessorios">
+      <img class="product-img" src="assets/acessorios-dourados.png" alt="Acessórios dourados">
+      <div class="product-body">
+        <span class="badge">ACESSÓRIOS</span>
+        <h3>Acessórios Dourados</h3>
+        <p>Seleção de brincos e argolas douradas para complementar o seu visual.</p>
+        <div class="price">A partir de 1.000 Kz</div>
+        <a class="buy" href="https://wa.me/244949336746?text=Ol%C3%A1%20I%26S%20Beauty!%20Tenho%20interesse%20nos%20Acess%C3%B3rios%20Dourados.%20Podem%20informar%20o%20pre%C3%A7o%20e%20a%20disponibilidade%3F" target="_blank">Comprar pelo WhatsApp</a>
+      </div>
+    </article>
+
+    <article class="product" data-category="beleza">
+      <img class="product-img" src="assets/gloss-shine.png" alt="Gloss Shine">
+      <div class="product-body">
+        <span class="badge">BELEZA</span>
+        <h3>Gloss Shine</h3>
+        <p>Gloss labial com brilho, disponível em diferentes tonalidades.</p>
+        <div class="price">A partir de 1.500 Kz</div>
+        <a class="buy" href="https://wa.me/244949336746?text=Ol%C3%A1%20I%26S%20Beauty!%20Tenho%20interesse%20no%20Gloss%20Shine.%20Podem%20informar%20a%20tonalidade%20e%20a%20disponibilidade%3F" target="_blank">Comprar pelo WhatsApp</a>
+      </div>
+    </article>
+
+    <article class="product" data-category="perfumes">
+      <img class="product-img" src="assets/perfumes.png" alt="Perfumes">
+      <div class="product-body">
+        <span class="badge">PERFUMES</span>
+        <h3>Perfumes</h3>
+        <p>Seleção de fragrâncias para diferentes estilos e ocasiões.</p>
+        <div class="price">3.000 Kz</div>
+        <a class="buy" href="https://wa.me/244949336746?text=Ol%C3%A1%20I%26S%20Beauty!%20Tenho%20interesse%20nos%20Perfumes.%20Podem%20enviar%20as%20op%C3%A7%C3%B5es%2C%20pre%C3%A7os%20e%20disponibilidade%3F" target="_blank">Comprar pelo WhatsApp</a>
+      </div>
+    </article>
+  </div>
+
+  <p class="note">Preço dos perfumes: <strong class="gold">3.000 Kz</strong>. Os acessórios estão disponíveis a partir de <strong class="gold">1.000 Kz</strong> e o Gloss Shine a partir de <strong class="gold">1.500 Kz</strong>. Confirme modelos, tonalidades e disponibilidade pelo WhatsApp.</p>
 </section>
 
 <section id="contactos">
-<div class="contact">
-<h2 class="title">Faça a sua encomenda</h2>
-<p>Fale connosco pelo WhatsApp para consultar produtos, preços e disponibilidade.</p>
-<a class="btn" href="https://wa.me/244949336746" target="_blank">Encomendar no WhatsApp</a>
-<p style="margin-top:18px;font-size:12px;color:#777">WhatsApp: +244 949 336 746</p>
-</div>
+  <div class="contact">
+    <h2 class="title">Faça a sua encomenda</h2>
+    <p>Envie-nos uma mensagem no WhatsApp para consultar produtos, preços, disponibilidade e entrega.</p>
+    <a class="btn" href="https://wa.me/244949336746?text=Ol%C3%A1%20I%26S%20Beauty!%20Quero%20consultar%20o%20cat%C3%A1logo." target="_blank">Falar no WhatsApp</a>
+    <p style="margin-top:16px;font-size:13px;color:#888">WhatsApp: +244 949 336 746</p>
+  </div>
 </section>
 </main>
 
-<footer>
-© 2026 <span class="gold">I&S Beauty</span> — Perfumes • Beleza • Acessórios
-</footer>
+<a class="floating" href="https://wa.me/244949336746?text=Ol%C3%A1%20I%26S%20Beauty!%20Quero%20consultar%20o%20cat%C3%A1logo." target="_blank">💬 WhatsApp</a>
+
+<footer>© 2026 <span class="gold">I&amp;S Beauty</span> — Perfumes • Beleza • Acessórios</footer>
+
+<script>
+function filterProducts(category, button){
+  document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));
+  button.classList.add('active');
+  document.querySelectorAll('.product').forEach(card=>{
+    card.style.display = (category==='todos' || card.dataset.category===category) ? 'flex' : 'none';
+  });
+}
+</script>
 </body>
 </html>
