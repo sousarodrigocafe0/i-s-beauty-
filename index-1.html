@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I&S Beauty | Perfumes, Beleza & Acessórios</title>
+<meta name="description" content="I&S Beauty — Perfumes, produtos de beleza e acessórios. Elegância que combina contigo.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,Helvetica,sans-serif;background:#090909;color:#fff;line-height:1.6}
+header{position:sticky;top:0;z-index:10;background:rgba(9,9,9,.96);border-bottom:1px solid #b98a35}
+nav{max-width:1100px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:14px 20px}
+.logo{font-family:Georgia,serif;color:#e6b85c;font-size:25px;font-weight:bold;letter-spacing:2px}
+nav a{color:#eee;text-decoration:none;margin-left:18px;font-size:14px}
+nav a:hover{color:#e6b85c}
+.hero{min-height:78vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:70px 20px;background:radial-gradient(circle at center,#2b2110 0,#090909 52%)}
+.hero h1{font-family:Georgia,serif;font-size:clamp(48px,10vw,90px);color:#e6b85c;letter-spacing:5px}
+.hero h2{font-size:25px;margin:8px 0;color:#fff;letter-spacing:3px}
+.hero p{max-width:600px;margin:18px auto;color:#d4d4d4}
+.btn{display:inline-block;margin-top:18px;background:#d9aa50;color:#090909;text-decoration:none;font-weight:bold;padding:13px 25px;border-radius:30px}
+section{max-width:1100px;margin:auto;padding:70px 20px}
+.title{text-align:center;font-family:Georgia,serif;color:#e6b85c;font-size:34px;margin-bottom:35px}
+.about{text-align:center;max-width:760px;margin:auto;color:#ccc}
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:20px}
+.card{background:#141414;border:1px solid #5d431d;border-radius:16px;padding:28px 20px;text-align:center;transition:.2s}
+.card:hover{transform:translateY(-4px);border-color:#e6b85c}
+.icon{font-size:45px;margin-bottom:10px}
+.card h3{color:#e6b85c;margin-bottom:8px}
+.card p{color:#bbb;font-size:14px}
+.contact{text-align:center;background:#111;border-radius:20px;border:1px solid #5d431d}
+.contact p{color:#ccc}
+footer{text-align:center;padding:30px 20px;border-top:1px solid #3b2a12;color:#999;font-size:13px}
+.gold{color:#e6b85c}
+@media(max-width:650px){nav{flex-direction:column;gap:10px}nav a{margin:0 7px}.hero{min-height:70vh}.hero h2{font-size:19px}}
+</style>
+</head>
+<body>
+<header>
+<nav>
+<div class="logo">I&S BEAUTY</div>
+<div>
+<a href="#inicio">Início</a>
+<a href="#sobre">Sobre</a>
+<a href="#produtos">Produtos</a>
+<a href="#contactos">Contactos</a>
+</div>
+</nav>
+</header>
+
+<main>
+<section class="hero" id="inicio">
+<div>
+<div class="gold" style="font-size:14px;letter-spacing:4px">PERFUMES • BELEZA • ACESSÓRIOS</div>
+<h1>I&S</h1>
+<h2>BEAUTY</h2>
+<p>Elegância que combina contigo. Descubra perfumes e acessórios escolhidos para realçar o seu estilo.</p>
+<a class="btn" href="#produtos">Ver produtos</a>
+</div>
+</section>
+
+<section id="sobre">
+<h2 class="title">Sobre a I&S Beauty</h2>
+<p class="about">A <strong class="gold">I&S Beauty</strong> é uma marca dedicada à venda de perfumes, produtos de beleza e acessórios. O nosso objetivo é oferecer qualidade, elegância e uma experiência de compra simples e confiável.</p>
+</section>
+
+<section id="produtos">
+<h2 class="title">O que vendemos</h2>
+<div class="products">
+<div class="card"><div class="icon">🌸</div><h3>Perfumes</h3><p>Fragrâncias para diferentes estilos e ocasiões.</p></div>
+<div class="card"><div class="icon">💄</div><h3>Beleza</h3><p>Produtos para complementar o seu cuidado e estilo.</p></div>
+<div class="card"><div class="icon">💎</div><h3>Acessórios</h3><p>Detalhes que dão personalidade ao seu visual.</p></div>
+<div class="card"><div class="icon">🎁</div><h3>Presentes</h3><p>Opções para surpreender alguém especial.</p></div>
+</div>
+</section>
+
+<section id="contactos">
+<div class="contact">
+<h2 class="title">Faça a sua encomenda</h2>
+<p>Fale connosco pelo WhatsApp para consultar produtos, preços e disponibilidade.</p>
+<a class="btn" href="https://wa.me/244949336746" target="_blank">Encomendar no WhatsApp</a>
+<p style="margin-top:18px;font-size:12px;color:#777">WhatsApp: +244 949 336 746</p>
+</div>
+</section>
+</main>
+
+<footer>
+© 2026 <span class="gold">I&S Beauty</span> — Perfumes • Beleza • Acessórios
+</footer>
+</body>
+</html>
